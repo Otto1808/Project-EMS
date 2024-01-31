@@ -19,3 +19,10 @@ Route::get('/', function () {
 
 Route::view('employee', 'admin.create');
 
+Route::get('department/create', [App\Http\Controllers\DepartmentController::class, 'create'])->name('department.create');
+Route::get('department/index', [App\Http\Controllers\DepartmentController::class, 'index'])->name('department.index');
+Route::post('department/store', [App\Http\Controllers\DepartmentController::class, 'store'])->name('departments.store');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
