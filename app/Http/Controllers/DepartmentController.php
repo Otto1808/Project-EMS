@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Departements;
 use Illuminate\Http\Request;
-use App\Models\Departement;
+
 
 class DepartmentController extends Controller
 {
@@ -51,7 +51,8 @@ class DepartmentController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $department = Departements::find($id);
+        return view('admin.department.edit', compact('department'));
     }
 
     /**
@@ -59,7 +60,10 @@ class DepartmentController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $department = Departements::find($id);
+        $data = $request->all();
+        $department->update($data);
+        return redirect()->route('departments.index')->with('message', 'Department updated successfully');
     }
 
     /**

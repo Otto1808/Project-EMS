@@ -9,12 +9,17 @@
                         {{Session::get('message')}}
                     </div>
                 @endif
-                <form action="{{route('departments.store')}}" method="POST">
+                <form action="{{route('departments.update')}}" method="POST">
                     @csrf
                 <div class="card">
                     <div class="card-header"> Dashboard </div>
 
                     <div class="card-body">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item active" aria-current="page">Create New Department</li>
+                            </ol>
+                        </nav>
                         <div class="form-group">
                             <label for="name"> Name</label>
                             <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" placeholder="Enter Name">

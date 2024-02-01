@@ -16,7 +16,7 @@
                     </a>
                     <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                         <nav class="sb-sidenav-menu-nested nav">
-                            <a class="nav-link" href="{{route('department.create')}}">Create Department</a>
+                            <a class="nav-link" href="{{route('departments.create')}}">Create Department</a>
                             <a class="nav-link" href="/">View</a>
                         </nav>
                     </div>

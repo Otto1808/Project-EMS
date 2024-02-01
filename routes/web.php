@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DepartmentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,9 +20,7 @@ Route::get('/', function () {
 
 Route::view('employee', 'admin.create');
 
-Route::get('department/create', [App\Http\Controllers\DepartmentController::class, 'create'])->name('department.create');
-Route::get('department/index', [App\Http\Controllers\DepartmentController::class, 'index'])->name('department.index');
-Route::post('department/store', [App\Http\Controllers\DepartmentController::class, 'store'])->name('departments.store');
+Route::resource('departments', App\Http\Controllers\DepartmentController::class);
 
 Auth::routes();
 
