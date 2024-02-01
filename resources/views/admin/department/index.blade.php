@@ -38,7 +38,36 @@
                                         <i class="fas fa-edit"></i>
                                         </a>
                                     </td>
-                                    <td><i class="fas fa-trash"></i>Delete</td>
+                                    <td>
+                                        <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                            <i class="fas fa-trash"></i>
+                                        </a>
+
+                                        <!-- Modal -->
+                                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog">
+                                                <form action="{{route('departments.destroy', [$department->id])}}" method="post">
+                                                    @csrf
+                                                    {{@method_field('DELETE')}}
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        Do you want to delete?
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                                                        <button type="submit" class="btn btn-danger">Delete</button>
+                                                    </div>
+                                                </div>
+                                                </form>
+                                            </div>
+                                        </div>
+
+                                        <!-- Modal end -->
+                                    </td>
                                 </tr>
                             @endforeach
                         @else
