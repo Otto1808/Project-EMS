@@ -5,11 +5,11 @@
         <div class="row justify-content-center">
             <div class="col-md-10">
                 @if(Session::get('message'))
-                    <div class="aler alert-success m-2">
+                    <div class="alert alert-success m-2">
                         {{Session::get('message')}}
                     </div>
                 @endif
-                <form action="{{route('departments.update')}}" method="POST">
+                <form action="{{route('departments.store')}}" method="POST">
                     @csrf
                 <div class="card">
                     <div class="card-header"> Dashboard </div>

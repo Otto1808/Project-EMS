@@ -22,6 +22,8 @@ Route::view('employee', 'admin.create');
 
 Route::resource('departments', App\Http\Controllers\DepartmentController::class);
 
+Route::resource('roles', App\Http\Controllers\RoleController::class);
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
