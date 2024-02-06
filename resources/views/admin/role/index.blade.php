@@ -39,7 +39,7 @@
                                         </a>
                                     </td>
                                     <td>
-                                        <a href="#" data-toggle="modal" data-target="#exampleModal{{$role->id}}">
+                                        <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal{{$role->id}}">
                                             <i class="fas fa-trash"></i>
                                         </a>
 
@@ -51,17 +51,17 @@
                                                     {{method_field('DELETE')}}
                                                     <div class="modal-content">
                                                         <div class="modal-header">
-                                                            <h5 class="modal-title" id="exampleModalLabel">Roles</h5>
-                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                                <span aria-hidden="true">&times;</span>
+                                                            <h5 class="modal-title" id="exampleModalLabel">Delete Role</h5>
+                                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                                                                <span aria-hidden="true"></span>
                                                             </button>
                                                         </div>
                                                         <div class="modal-body">
-                                                            Are you sure to delete this role?
+                                                            Are you sure you want to delete this role?
                                                         </div>
                                                         <div class="modal-footer">
                                                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                                            <button type="submit" class="btn btn-primary">Delete</button>
+                                                            <button type="submit" class="btn btn-danger">Delete!!!</button>
                                                         </div>
                                                     </div>
                                                 </form>
