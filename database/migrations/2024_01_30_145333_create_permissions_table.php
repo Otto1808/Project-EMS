@@ -11,13 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('permissions', function (Blueprint $table) {
+        /*Schema::create('permissions', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('role_id');
             $table->text('name');
             $table->foreign('role_id')->references('id')->on('roles')->onDelete('cascade');
             $table->timestamps();
-        });
+        });*/
     }
 
     /**

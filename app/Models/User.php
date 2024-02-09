@@ -21,8 +21,14 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'address',
+        'mobile_number',
+        'department_id',
+        'designation',
+        'role_id',
+        'image',
+        'start_from'
     ];
-
     /**
      * The attributes that should be hidden for serialization.
      *
@@ -41,5 +47,6 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
+        'start_from' => 'date',
     ];
 }

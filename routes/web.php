@@ -14,15 +14,20 @@ use App\Http\Controllers\DepartmentController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::group(['middleware' => 'auth'], function() {
+    Route::get('/', function () {
+        return view('welcome');
+    });
+    Route::resource('departments', App\Http\Controllers\DepartmentController::class);
+    Route::resource('roles', App\Http\Controllers\RoleController::class);
+    Route::resource('users', App\Http\Controllers\UserController::class);
 });
 
 Route::view('employee', 'admin.create');
-
-Route::resource('departments', App\Http\Controllers\DepartmentController::class);
-
-Route::resource('roles', App\Http\Controllers\RoleController::class);
 
 Auth::routes();
 
